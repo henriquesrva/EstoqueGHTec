@@ -1,0 +1,64 @@
+:root{
+    --bg:#0b0f14;
+    --border:rgba(255,255,255,.10);
+    --border2:rgba(255,255,255,.10);
+    --text:rgba(255,255,255,.92);
+}
+
+
+
+.oculto{
+    display: none;
+}
+
+*{box-sizing: border-box;}
+body,html{height: 100%;}
+
+body{
+    margin: 0;
+    background-color: var(--bg);
+    line-height: 1.35;
+    color: var(--text);
+}
+
+.card{
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    backdrop-filter: blur(6px);
+    border: 2px solid var(--border);
+}
+
+.card_responsavel{
+    min-width: 200px;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    backdrop-filter: blur(6px);
+    border: 2px solid var(--border);
+}
+
+.card form{
+    display: flex;
+    flex-direction: column;
+    gap:6px;
+}
+
+#buttonNext:disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.shake{
+    animation: shake 0.25s linear;
+}
+
+@keyframes shake{
+    0% {transform: translateX(0px);}
+    25% {transform: translateX(-6px);}
+    50% {transform: translateX(6px);}
+    75% {transform: translateX(-6px);}
+    100% {transform: translateX(0px);}
+}
+

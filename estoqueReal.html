@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Henrique Saraiva">
+    <meta name="description" content="Estoque Ghtec">
+    <meta name="keywords" content="Estoque">
+    <meta name="theme-color" content="rgb(0,255,0)">
+    <meta property="description" content="Estoque GHtec">
+    <meta property="url" content="">
+    <meta property="type" content="website">
+    <meta property="image" content="">
+    <meta property="title" content="MovEstoque">
+    <title>Mov Estoque</title>
+    <link rel="stylesheet" href="estoqueReal.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select/dist/css/tom-select.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Movimentação de Estoque GHTEC</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href=""></a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="card_responsavel">
+            <p><strong>Quem é o RESPONSAVEL</strong></p>
+            <form>
+                <select id="responsavel" name="resp" required>
+                    <option value="null">Selecione a opção</option>
+                    <option value="H">Henrique</option>
+                    <option value="V">Vitoria</option>
+                </select>
+            </form>
+        </section>
+        
+        <section class="card"> 
+            <!-- 0 -->
+            <p><strong>Movimentacao ou Atualizando quantidade?</strong></p>
+            <form>
+                <label>
+                    <input type="radio" name="Mov_att" value="mov" required>
+                    Movimentacao
+                </label>
+
+                <label>
+                    <input type="radio" name="Mov_att" value="att">
+                    Atualizei quantidade
+                </label>
+            </form>
+        </section>
+
+        <section class="card">
+            <!-- 1 -->
+            <form>
+                <label for="att">
+                <strong>Qual peça? Qual valor anterior?Qual mudança?</strong><br>
+                Exemplo : Guarnição. 2 - > 3 <br>
+                Exemplo: Filtro 10 -> 11 <br>
+                </label>
+                <textarea id="att" rows="6" cols="50" placeholder="Escreva aqui..."></textarea>
+            </form>
+        </section>
+
+        <section class="card">
+            <!-- 2 -->
+            <p><strong>Voce esta registrando NO MOMENTO da movimentação ou DEPOIS?</strong></p>
+            <form>
+                <label>
+                    <input type="radio" name="momento" value="momento" required>
+                    No Momento 
+                </label>
+
+                <label>
+                    <input type="radio" name="momento" value="depois">
+                    Depois
+                </label>
+
+                <label for="nomePeca">
+                    <strong>Nome tecnico da peça</strong>
+                </label>
+
+                <select id="nomePeca" name="nomePeca" required>
+                    <option value="">Digite a peça..</option>
+                </select>    
+                
+                <label for="quantidade"><strong>Quantidade</strong></label>
+                <input id="quantidade" name="quantidade" type="text" placeholder="Ex:1" required>
+
+                <strong>TIPO</strong>
+
+                <label>
+                    <input type="radio" name="tipo" value="ENTRADAEST" required>
+                    ENTRADA NO ESTOQUE
+                </label>
+
+                <label>
+                    <input type="radio" name="tipo" value="SAIDAEST">
+                    SAIDA DO ESTOQUE
+                </label>
+
+                <label>
+                    <input type="radio" name="tipo" value="ENTRADAEXP">
+                    ENTRADA NA EXPEDICAO
+                </label>
+
+                <label>
+                    <input type="radio" name="tipo" value="SAIDAEXP">
+                    SAIDA DA EXPEDICAO
+                </label>
+            </form>
+        </section>
+
+        <section class="card">
+            <!-- 3 -->
+            <strong>QUAL O TIPO DE ENTRADA ?</strong>
+            <form>
+                <label>
+                    <input type="radio" name="Tdeentrada" value="TECompra" required>
+                    Compra (nova)
+                </label>
+                <label>
+                    <input type="radio" name="Tdeentrada" value="TEDevolucaoTec" required>
+                    Devolução dos tecnicos
+                </label>
+                <label>
+                    <input type="radio" name="Tdeentrada" value="TEGuardar" required>
+                    Guardar para alguem
+                </label>
+                <label>
+                    <input type="radio" name="Tdeentrada" value="TEDevolucaoCon" required>
+                    Devolução conserto
+                </label>
+            </form>
+        </section>
+
+        <section class="card">
+            <!-- 4 -->
+             <strong>TIPO DE SAIDA</strong>
+                <form>
+                    <label>
+                        <input type="radio" name="Tdesaida" value="TStecnicos(manutenção)">
+                        Tecnicos (manutenção)
+                    </label>
+
+                    <label>
+                        <input type="radio" name="Tdesaida" value="TSvendaAvulsa">
+                        Venda Avulsa
+                    </label>
+
+                    <label>
+                        <input type="radio" name="Tdesaida" value="TScaixaDeExp">
+                        Caixa de Expedição
+                    </label>
+                </form>
+        </section>
+
+        <section class="card">
+            <!-- 5 -->
+             <Strong>ENTRADA NA EXPEDIÇÃO</Strong>
+             <form>
+                <label for="Eexp"><strong>Para onde vai? Com quem vai?</strong></label>
+                <input id="Eexp" name="Eexp" type="text" placeholder="Ex: Santa Casa , Gil" required>
+             </form>
+        </section>
+
+        <section class="card">
+            <!-- 6 -->
+             <strong>SAIDA DA EXPEDICAO</strong>
+             <form>
+                <label for="Sexp"><strong>Quem ta levando?</strong></label>
+                <input name="Sexp" id="Sexp" type="text" placeholder="Ex: GIl" required>
+             </form>
+        </section>
+
+        <section class="card">
+            <!-- 7 -->
+             <strong>Compra (NOVA)</strong>
+             <form>
+                <label>
+                    <input type="checkbox" name="nf" id="nf" required>
+                    A nota fiscal foi entregue para a VITORIA?
+                </label>
+             </form>
+        </section>
+
+        <section class="card">
+            <!-- 8 -->
+             <strong>Enviar respostas?</strong>
+             <button type="button" id="btnEnviar">Enviar</button>
+        </section>
+
+        <section class="card">
+            <!-- 9 -->
+             <strong>Saida para Tecnicos (manutencao)</strong>
+             <form>
+                <label for="maos">Nas maos de quem?</label>
+                <input id="maos" name="maos" type="text" placeholder="Ex: Gil" required>
+
+                <strong>A peça volta para o estoque?</strong>
+                <label>
+                    <input name="volta" type="radio" value="s" required>
+                    Sim
+                </label>
+
+                <label>
+                    <input name="volta" type="radio" value="tlvz" required>
+                    Talvez
+                </label>
+
+                <label>
+                    <input name="volta" type="radio" value="n" required>
+                    Nao
+                </label>
+
+                <label for="onde">Para onde vai a peça?</label>
+                <input name="onde" id="onde" placeholder="Ex : Santa Casa" type="text" required> 
+             </form>
+        </section>
+
+        <button type="button" id="buttonNext">Proximo</button>
+    </main>
+
+    <footer>
+        Henrique Saraiva.
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select/dist/js/tom-select.complete.min.js"></script>
+    <script src="estoqueReal.js"></script>
+</body>
+</html>
